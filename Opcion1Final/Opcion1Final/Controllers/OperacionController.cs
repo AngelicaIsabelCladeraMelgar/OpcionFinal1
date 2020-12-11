@@ -13,41 +13,45 @@ namespace Opcion1Final.Controllers
     {
         [HttpGet]
         public string Operacion(int numero)
-        { 
+        {
+            string palabra = "";
             if (numero < 0)
             {
-                return "ERROR";
+                palabra = "ERROR";
             }
             else
             {
                 if(numero==0)
                 {
-                    return "Realizado por Isabel Cladera";
+                    palabra = "Realizado por Isabel Cladera";
                 }
                 else
                 {
-                    return ("Usted ingreso el numero [0]");
+                    palabra = "Usted ingreso el numero  " + numero;
                 }
             }
+            return palabra;
         }
         [HttpPost]
         public string Operacion2([FromHeader] int numero)
         {
+            string palabra = "";
             if (numero < 0)
             {
-                return "ERROR";
+                palabra = "ERROR";
             }
             else
             {
                 if (numero == 0)
                 {
-                    return "Realizado por Isabel Cladera";
+                    palabra = "Realizado por Isabel Cladera";
                 }
                 else
                 {
-                    return "Usted ingreso el  {0}";
+                    palabra = "Usted ingreso el numero" + numero;
                 }
             }
+            return palabra;
         }
     }
 }
